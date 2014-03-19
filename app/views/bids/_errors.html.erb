@@ -1,0 +1,5 @@
+<h3>The following problems prevented saving.</h3>
+<ul>
+<% @bid.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>

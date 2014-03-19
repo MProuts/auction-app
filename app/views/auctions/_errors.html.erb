@@ -1,0 +1,6 @@
+<h3>The following errors occured: </h3>
+<ul>
+<% @auction.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+</ul>

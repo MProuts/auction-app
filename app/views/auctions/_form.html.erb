@@ -1,0 +1,16 @@
+<%= render 'errors' if @auction.errors.any? %>
+
+<%= form_for(@auction) do |t| %>
+    <%= t.label :title %>
+    <%= t.text_field :title, :class => "form-control" %>
+
+    <%= t.label :description %>
+    <%= t.text_field :description, :class => "form-control" %>
+
+    <div class="form-group">
+    <%= t.label :end_date %>
+    <%= t.date_field :end_time, :class => "form-control"%>
+    </div>
+
+    <%= t.submit "Submit" , :class => "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,8 @@
+<tr>
+  <td><%= auction.title %></td>
+  <td><%= auction.description %></td>
+  <td><%= auction.end_time %></td>
+  <td><%= link_to "show", auction %></td>
+  <td><%= link_to "edit", edit_auction_path(auction) %></td>
+  <td><%= link_to "delete", auction, :method => "Delete" %></td>
+</tr>

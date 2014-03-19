@@ -1,4 +1,20 @@
 AuctionAppSecondGo::Application.routes.draw do
+  post "auctions/:auction_id/bids/" => "bids#create", :as => "auction_bid"
+  get "auctions/:auction_id/bids/new" => "bids#new", :as => "new_auction_bid"
+  get "bids/:id" => "bids#show", :as => "bid"
+
+  root 'auctions#index'
+
+  get "auctions/" => "auctions#index"
+  post "auctions/" => "auctions#create"
+
+  get "auctions/new" => "auctions#new", :as => "new_auction"
+  get "auctions/:id/edit" => "auctions#edit", :as => "edit_auction"
+
+  get "auctions/:id" => "auctions#show", :as => "auction"
+  patch "auctions/:id" => "auctions#update"
+  delete "auctions/:id" => "auctions#destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

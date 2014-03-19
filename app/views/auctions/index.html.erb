@@ -1,0 +1,15 @@
+<h1>Auctions</h1>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>End Time</th>
+    <th><!-- show --></th>
+    <th><!-- edit --></th>
+    <th><!-- delete --></th>
+  </tr>
+  <%= render :collection => @auctions, :partial => 'auctions/auction' %>
+
+</table>
+
+<%= link_to "Create Auction", new_auction_path, :class => "btn btn-primary" %>

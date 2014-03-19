@@ -1,0 +1,10 @@
+<h1>New Bid</h1>
+<%= render 'errors' if @bid.errors.any? %>
+
+<%= form_for @bid, :url => "/auctions/#{@auction.id}/bids" do |f| %>
+  <div class="form-group">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+  <%= f.submit %>
+<% end %>
