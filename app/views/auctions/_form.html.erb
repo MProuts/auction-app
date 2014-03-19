@@ -1,5 +1,3 @@
-<%= render 'errors' if @auction.errors.any? %>
-
 <%= form_for(@auction) do |t| %>
     <%= t.label :title %>
     <%= t.text_field :title, :class => "form-control" %>
