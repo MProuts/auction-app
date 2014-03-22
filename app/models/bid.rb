@@ -23,14 +23,10 @@ class Bid < ActiveRecord::Base
   end
 
   def amount_in_dollars
-    self.amount / 100 if self.amount
+    self.amount.to_i / 100 if self.amount
   end
 
   def amount_in_dollars=(amount_in_dollars)
-    if amount_in_dollars.to_i == 0
-      self.amount = amount_in_dollars
-    else
-      self.amount = amount_in_dollars.to_i * 100
-    end
+    self.amount = amount_in_dollars.to_i * 100
   end
 end

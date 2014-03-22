@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140318235632) do
   end
 
   create_table "bids", force: true do |t|
-    t.integer  "amount"
+    t.integer  "amount",     limit: 255
     t.integer  "auction_id"
     t.integer  "bidder_id"
     t.datetime "created_at"
