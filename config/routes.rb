@@ -6,15 +6,15 @@ AuctionAppSecondGo::Application.routes.draw do
   get "register" => "users#new"
   post "users/" => "users#create"
 
-  get "users/new" => "users#new", :as => "new_user"
   get "users/:id/edit" => "users#edit", :as => "edit_user"
 
   patch "users/:id" => "users#update", :as => "user"
   delete "users/:id" => "users#destroy"
 
   # session
+  get "log_in" => "sessions#new"
   post "sessions/" => "sessions#create"
-  delete "sessions/:id" => "sessions#destroy", :as => "session"
+  delete "sessions/" => "sessions#destroy", :as => "log_out"
 
   # auctions
   get "auctions/" => "auctions#index"

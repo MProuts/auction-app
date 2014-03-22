@@ -1,14 +1,19 @@
 class Auction < ActiveRecord::Base
   validates_presence_of :title, :end_time
   validates_uniqueness_of :title
-  validate :not_ended?
+  validate :has_not_ended
   belongs_to :seller, :class_name => "User"
   has_many :bids
 
-  private
-  def not_ended?
-    if (self.end_time < Time.now)
-      errors.add(:end_time, "must be in the future.")
-    end
+  def ended?
+    self.end_time < Time.now
+  end
+
+  def has_not_ended
+    errors.add(:end_time, "must be in the future.") if ended?
+  end
+
+  def current_bid 
+    bids.where(amount: bids.maximum(:amount)).first
   end
 end

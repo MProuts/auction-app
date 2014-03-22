@@ -1,5 +1,2 @@
-<tr>
-  <td><%#= bid.bidder.name %></td>
-  <td><%= bid.amount %></td>
-</tr>
-
+<h3>Current Bid: $<%= @auction.current_bid.amount_in_dollars %></h3>
+<h5><%= @auction.current_bid.bidder.email %></h5>

@@ -1,9 +1,10 @@
-<div class="well">
-<h4>The following errors occured: </h4>
-
-<ul>
-<% object.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-<% end %>
-</ul>
+<div class="panel panel-danger">
+  <div class="panel-heading">Errors</div>
+  <div class="panel-body">
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -1,0 +1,7 @@
+<%= form_for @bid, :url => "/auctions/#{@auction.id}/bids" do |f| %>
+  <div class="form-group">
+    <%= f.label :amount %>
+    <%= text_field_tag "bid[amount_in_dollars]", nil, :class => "form-control" %>
+  </div>
+  <%= f.submit "Place Bid", :class => "btn btn-primary", :data => { :confirm => "Are you sure?" } %>
+<% end %>

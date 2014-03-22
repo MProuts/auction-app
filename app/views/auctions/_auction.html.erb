@@ -2,7 +2,13 @@
   <td><%= auction.title %></td>
   <td><%= auction.description %></td>
   <td><%= auction.end_time %></td>
+  <td><%= auction.seller.email %></td>
   <td><%= link_to "show", auction %></td>
-  <td><%= link_to "edit", edit_auction_path(auction) %></td>
-  <td><%= link_to "delete", auction, :method => "Delete" %></td>
+  <% if logged_in_with_id? auction.seller_id %>
+    <td><%= link_to "edit", edit_auction_path(auction) %></td>
+    <td><%= link_to "delete", auction, :method => "Delete" %></td>
+  <% else %>
+    <td></td>
+    <td></td>
+  <% end %>
 </tr>

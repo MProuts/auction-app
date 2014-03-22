@@ -1,28 +1,25 @@
-<h1>Auction</h1>
+<h1><%= @auction.title %></h1>
 <table class="table">
   <tr>
     <th>Title</th>
     <th>Description</th>
     <th>End Time</th>
+    <th>Seller</th>
     <th><!-- show --></th>
     <th><!-- edit --></th>
     <th><!-- delete --></th>
   </tr>
   <%= render @auction %>
-
 </table>
 
-<%= link_to "New Auction", new_auction_path, :class => "btn btn-primary" %>
-
-
-<h1>Bids</h1>
-<table class="table">
-  <tr>
-    <th>Bidder</th>
-    <th>Amount</th>
-  </tr>
-  <%= render @auction.bids %>
-
-</table>
-
-<%= link_to "New Bid", new_auction_bid_path(@auction), :class => "btn btn-primary" %>
+<div class="row">
+  <div class="well col-xs-4">
+    <% if @auction.current_bid %>
+      <%= render @auction.current_bid %>
+    <% else %>
+      <h2>No bids.</h2>
+    <% end %>
+    <%= render :partial => 'errors', :locals => { :object => @bid } if @bid.errors.any? %>
+    <%= render :partial => "bids/form" %>
+  </div>
+</div>

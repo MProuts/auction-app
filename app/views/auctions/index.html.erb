@@ -4,11 +4,12 @@
     <th>Title</th>
     <th>Description</th>
     <th>End Time</th>
+    <th>Seller</th>
     <th><!-- show --></th>
     <th><!-- edit --></th>
     <th><!-- delete --></th>
   </tr>
-  <%= render :collection => @auctions, :partial => 'auctions/auction' %>
+  <%= render @auctions %>
 
 </table>
 

@@ -1,1 +1,14 @@
 <%# add navigation links to this file %>
+<ul class="nav navbar-nav">
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <% if logged_in? %>
+    <li><%= link_to current_user.email, edit_user_path(current_user) %></li>
+    <li><%= link_to "log out", sessions_path, :method => "Delete" %>
+  <% else %>
+    <li><%= link_to "register", register_path %></li>
+    <li><%= link_to "log in", log_in_path %></li>
+  <% end %>
+</ul>

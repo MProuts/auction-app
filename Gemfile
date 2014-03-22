@@ -1,8 +1,18 @@
 source 'https://rubygems.org'
 
+gem 'pry'
+
 gem "bootstrap-sass"
 group :development do
   gem "rails_layout"
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 gem 'bcrypt-ruby'
@@ -39,14 +49,3 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
