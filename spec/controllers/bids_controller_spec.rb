@@ -16,7 +16,7 @@ describe BidsController do
                                 :bidder_id => @bidder.id,
                                 :amount => 1000 }}
       expect(Bid.count).to eq(bid_count)
-      expect(response).to redirect_to(auctions_path)
+      expect(response).to redirect_to(log_in_path)
     end
 
     it "seller can't bid on own items" do
