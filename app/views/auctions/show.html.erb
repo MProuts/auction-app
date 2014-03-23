@@ -19,7 +19,9 @@
     <% else %>
       <h2>No bids.</h2>
     <% end %>
-    <%= render :partial => 'errors', :locals => { :object => @bid } if @bid.errors.any? %>
-    <%= render :partial => "bids/form" %>
+    <% unless logged_in? && current_user == @auction.seller %>
+      <%= render :partial => 'errors', :locals => { :object => @bid } if @bid.errors.any? %>
+      <%= render :partial => "bids/form" %>
+    <% end %>
   </div>
 </div>
