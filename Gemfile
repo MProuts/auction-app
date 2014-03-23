@@ -7,6 +7,8 @@ group :development do
   gem "rails_layout"
 end
 
+gem 'bootstrap-datetimepicker-rails'
+
 group :test do
   gem 'rspec-rails'
   gem 'simplecov'

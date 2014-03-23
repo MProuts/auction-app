@@ -1,14 +1,23 @@
-<%= form_for(@auction) do |t| %>
-    <%= t.label :title %>
-    <%= t.text_field :title, :class => "form-control" %>
+<div class="row">
+  <div class="col-xs-6">
+    <%= form_for(@auction) do |t| %>
 
-    <%= t.label :description %>
-    <%= t.text_field :description, :class => "form-control" %>
+      <div class="form-group">
+        <%= t.label :title %>
+        <%= t.text_field :title, :class => "form-control" %>
+      </div>
 
-    <div class="form-group">
-    <%= t.label :end_date %>
-    <%= t.datetime_select :end_time, :class => "form-control"%>
-    </div>
+      <div class="form-group">
+        <%= t.label :description %>
+        <%= t.text_field :description, :class => "form-control"%>
+      </div>
 
-    <%= t.submit "Submit" , :class => "btn btn-primary" %>
-<% end %>
+      <div class="form-group">
+        <%= t.label :end_date %>
+        <%= t.datetime_select :end_time, :class => "form-control"%>
+      </div>
+
+      <%= t.submit "Submit" , :class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
